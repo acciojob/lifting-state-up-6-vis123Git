@@ -1,0 +1,15 @@
+.todolistdata {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .todolistitem {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 10px;
+      }
+      

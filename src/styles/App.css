@@ -1,1 +1,30 @@
 
+* {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+      .todo-app {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 50vw;
+        height: 50vh;
+        gap: 10px;
+      }
+      
+      .inputcontainer {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        gap: 10px;
+      }
+      
