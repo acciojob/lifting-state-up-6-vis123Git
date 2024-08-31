@@ -8,18 +8,13 @@ const App = () => {
     { id: 2, text: "Build a React app", completed: false },
     { id: 3, text: "Deploy the React app", completed: false },
   ]);
-  const handleInput = () => {
-    const input = document.getElementById("input");
-    const value = input.value.trim();
-    if (value) {
-      setList([...todos, { id: Date.now(), text: value }]);
-      input.value = "";
-    }
-  };
 
   const handleComplete = (id) => {
-    const filterData = todos.filter((item) => {
-      return item.id !== id;
+    const filterData = todos.map((item) => {
+      if(item.id == id){
+        item.completed = true
+      } ;
+      return item;
     });
     setList([...filterData]);
   };
@@ -27,10 +22,7 @@ const App = () => {
     <div className="container">
       <div className="todo-app">
         <h1>To-Do List</h1>
-        {/* <div className="inputcontainer">
-          <input type="text" id="input"></input>
-          <button onClick={handleInput}>Add Todo</button>
-        </div> */}
+
         <TodoList todos={todos} handleComplete={handleComplete} />
       </div>
     </div>
