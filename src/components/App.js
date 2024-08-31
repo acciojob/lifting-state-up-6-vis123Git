@@ -10,11 +10,8 @@ const App = () => {
   ]);
 
   const handleComplete = (id) => {
-    const filterData = todos.map((item) => {
-      if(item.id == id){
-        item.completed = true
-      } ;
-      return item;
+    const filterData = todos.filter((item) => {
+      return item.id !== id
     });
     setList([...filterData]);
   };
