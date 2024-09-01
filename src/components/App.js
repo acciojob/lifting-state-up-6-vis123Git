@@ -9,9 +9,12 @@ const App = () => {
     { id: 3, text: "Deploy the React app", completed: false },
   ]);
 
-  const handleComplete = (id) => {
-    const filterData = todos.filter((item) => {
-      return item.id !== id
+  const handleComplete = (id, e) => {
+    const filterData = todos.map((item) => {
+      if(item.id == id){
+        item.completed = true
+      }
+      return item
     });
     setList([...filterData]);
   };
