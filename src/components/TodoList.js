@@ -1,5 +1,6 @@
 import React from "react";
 import "./todolist.css";
+
 function TodoList({ todos, handleComplete }) {
   return (
     <div className="todolistdata">
@@ -7,8 +8,12 @@ function TodoList({ todos, handleComplete }) {
         {todos.map((item) => {
           return (
             <li key={item.id} className="todolistitem">
-              <span> {item.text}</span>
-              {!item.completed && <button onClick={() => handleComplete(item.id)}>Complete</button>}
+              <span style={{ textDecoration: item.completed ? 'line-through' : 'none' }}>
+                {item.text}
+              </span>
+              {!item.completed && (
+                <button onClick={() => handleComplete(item.id)}>Complete</button>
+              )}
             </li>
           );
         })}
