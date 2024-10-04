@@ -8,7 +8,7 @@ function TodoList({ todos, handleComplete }) {
         {todos.map((item) => {
           return (
             <li key={item.id} className="todolistitem">
-              <span style={{ textDecoration: item.completed ? 'line-through' : 'none' }}>
+              <span>
                 {item.text}
               </span>
               {!item.completed && (
